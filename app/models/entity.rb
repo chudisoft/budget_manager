@@ -1,6 +1,6 @@
 class Entity < ApplicationRecord
-  belongs_to :author, foreign_key: 'author_id',class_name: 'User' # Ensure correct association with the User model
-  belongs_to :group
+  belongs_to :author, class_name: 'User', foreign_key: 'author_id' # Ensure correct association with the User model
+  has_and_belongs_to_many :groups
 
   validates :name, presence: true
   validates :amount, presence: true

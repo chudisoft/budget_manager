@@ -3,24 +3,26 @@ class EntitiesController < ApplicationController
   before_action :set_entity, only: [:edit, :update, :destroy]
 
   def index
-    @entities = current_user.entities
+    @entities = Entity.where(author_id: current_user.id)
   end
 
   def new
-    @entity = current_user.entities.build
-  end
-
-  def edit
-    # Renders edit form for specific entity
+    @entity = Entity.new
   end
 
   def create
-    @entity = current_user.entities.build(entity_params)
+    @entity = Entity.new(entity_params)
+    @entity.author_id = current_user.id
+
     if @entity.save
       redirect_to entities_path, notice: 'Entity was successfully created.'
     else
       render :new
     end
+  end
+
+  def edit
+    # Renders edit form for a specific entity
   end
 
   def update
@@ -39,7 +41,8 @@ class EntitiesController < ApplicationController
   private
 
   def set_entity
-    @entity = current_user.entities.find(params[:id])
+    @entity = Entity.find_by(id: params[:id], author_id: current_user.id)
+    redirect_to entities_path, alert: 'Entity not found' if @entity.nil?
   end
 
   def entity_params

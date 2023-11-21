@@ -1,17 +1,24 @@
 <div class="container mt-4">
-  <div class="row">
+  <div class="row gap-2">
     <% @groups.each do |group| %>
-      <div class="col-md-4 mb-4">
+      <div class="col-md-4">
         <div class="card">
-          <div class="card-header">
-            <%= group.name %>
-          </div>
-          <div class="card-body">
-            <!-- Add content related to the group here -->
-          </div>
-          <div class="card-footer">
-            <!-- Add additional details or actions related to the group -->
-          </div>
+            <div class="card-header">
+                <%= group.name %>
+            </div>
+            <div class="card-body">
+                <!-- Add content related to the group here -->
+            </div>
+            <div class="card-footer">
+                <%= form_with(model: group, url: group_path(group), method: :delete, data: { confirm: 'Are you sure?' }) do |form| %>
+                    <%= link_to edit_group_path(group), class: 'btn btn-sm btn-primary mr-2' do %>
+                        <i class="fas fa-edit mr-1"></i>Edit
+                    <% end %>
+                    <%= form.submit 'Remove', class: 'btn btn-danger btn-sm' do %>
+                        <i class="fas fa-trash-alt me-1"></i>Delete
+                    <% end %>
+                <% end %>
+            </div>
         </div>
       </div>
     <% end %>

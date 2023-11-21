@@ -3,14 +3,23 @@
     <% @entities.each do |entity| %>
       <div class="col-md-4 mb-4">
         <div class="card">
-          <div class="card-header">
-            <%= entity.name %>
-          </div>
-          <div class="card-body">
-            <!-- Add content related to the entity here -->
-          </div>
-          <div class="card-footer">
-            <!-- Add additional details or actions related to the entity -->
+            <div class="card-header">
+                <%= entity.name %>
+            </div>
+            <div class="card-body">
+                <!-- Add content related to the entity here -->
+            </div>
+            <div class="card-footer">
+                <div class="card-footer">
+                    <%= form_with(model: entity, url: entity_path(entity), method: :delete, data: { confirm: 'Are you sure?' }) do |form| %>
+                        <%= link_to edit_entity_path(entity), class: 'btn btn-sm btn-primary mr-2' do %>
+                            <i class="fas fa-edit mr-1"></i>Edit
+                        <% end %>
+                        <%= form.submit 'Remove', class: 'btn btn-danger btn-sm' do %>
+                            <i class="fas fa-trash-alt me-1"></i>Delete
+                        <% end %>
+                    <% end %>
+                </div>
           </div>
         </div>
       </div>
