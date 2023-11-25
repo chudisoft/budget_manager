@@ -3,7 +3,6 @@ databases:
     ipAllowList: []
     databaseName: budget_manager_aagy
     user: budget_manager_aagy_user
-    password: USlcsVKEW2A9WX60KejHzYpsJ8NRPXfe
 
 services:
   - type: web
