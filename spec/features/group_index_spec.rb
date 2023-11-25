@@ -24,6 +24,23 @@ RSpec.describe 'Group index', type: :feature do
       end
     end
   end
+end
+
+RSpec.describe 'Group New', type: :feature do
+  Rails.application.routes.default_url_options[:host] = 'localhost:3000'
+  let(:user) { User.new(email: 'user@example.com', password: 'password') }
+  let(:group) { Group.new(name: 'Flour', icon: 'https://', user:) }
+
+  before { user.save }
+  before { group.save }
+
+  before(:each) do
+    visit new_user_session_path
+    fill_in 'Email', with: 'user@example.com'
+    fill_in 'Password', with: 'password'
+    click_button 'Log in'
+    visit groups_path
+  end
 
   describe 'Click events' do
     it 'navigates to the new group page' do

@@ -7,7 +7,7 @@ RSpec.describe 'Entity', type: :model do
   let(:group) do
     Group.new(name: 'Bread', icon: 'https//a.com', user:)
   end
-  let(:entity) { Entity.new(name: 'Flour', amount: 20, group: group, author_id: user.id) }
+  let(:entity) { Entity.new(name: 'Flour', amount: 20, group:, author_id: user.id) }
 
   before { user.save }
   before { group.save }

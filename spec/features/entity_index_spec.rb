@@ -5,7 +5,7 @@ RSpec.describe 'Entity index', type: :feature do
   let(:user) { User.new(email: 'user@example.com', password: 'password') }
   let(:group) { Group.new(name: 'Flour', icon: 'https://', user:) }
   let(:entity) do
-    Entity.new(name: 'Bread', amount: 30, group: group, author_id: user.id)
+    Entity.new(name: 'Bread', amount: 30, group:, author_id: user.id)
   end
 
   before { user.save }
@@ -28,5 +28,4 @@ RSpec.describe 'Entity index', type: :feature do
       end
     end
   end
-
 end

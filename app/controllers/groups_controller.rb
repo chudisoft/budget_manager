@@ -1,15 +1,18 @@
+# This controller handles operations related to Groups.
+# Groups represent certain objects within the system.
+# It handles CRUD operations for Groups.
 class GroupsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_group, only: [:edit, :update, :destroy]
+  before_action :set_group, only: %i[edit update destroy]
 
   def index
     @groups = current_user.groups.includes(:entities)
 
-    if params[:sort] == 'ancient'
-      @groups = @groups.order(created_at: :asc)
-    else # if params[:sort] == 'recent'
-      @groups = @groups.order(created_at: :desc)
-    end
+    @groups = if params[:sort] == 'ancient'
+                @groups.order(created_at: :asc)
+              else # if params[:sort] == 'recent'
+                @groups.order(created_at: :desc)
+              end
 
     @group_entity_sums = {}
     @groups.each do |group|

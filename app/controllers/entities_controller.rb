@@ -1,7 +1,10 @@
+# This controller handles operations related to entities.
+# Entities represent certain objects within the system.
+# It handles CRUD operations for entities.
 class EntitiesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_group
-  before_action :set_entity, only: [:edit, :update, :destroy]
+  before_action :set_entity, only: %i[edit update destroy]
 
   def index
     @entities = @group.entities
@@ -45,7 +48,7 @@ class EntitiesController < ApplicationController
 
   def set_group
     @group = current_user.groups.find(params[:group_id])
-    rescue ActiveRecord::RecordNotFound
+  rescue ActiveRecord::RecordNotFound
     redirect_to root_path, alert: 'Group not found'
   end
 
