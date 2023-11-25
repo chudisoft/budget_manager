@@ -86,6 +86,8 @@ test:
 #
 production:
   <<: *default
-  database: budget_manager_production
-  username: budget_manager
-  password: <%= ENV["BUDGET_MANAGER_DATABASE_PASSWORD"] %>
+  host: <%= ENV["Hostname"] %>
+  database: <%= ENV["Database"] %>
+  username: <%= ENV["Username"] %>
+  password: <%= ENV["Password"] %>
+  port: 5432
