@@ -1,0 +1,20 @@
+databases:
+  - name: postgres
+    ipAllowList: []
+    databaseName: budget_manager_aagy
+    user: budget_manager_aagy_user
+    password: USlcsVKEW2A9WX60KejHzYpsJ8NRPXfe
+
+services:
+  - type: web
+    name: budget_manager
+    env: ruby
+    buildCommand: "./render-build.sh"
+    startCommand: "bundle exec rails s"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: postgres
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
