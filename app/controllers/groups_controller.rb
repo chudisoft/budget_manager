@@ -3,7 +3,18 @@ class GroupsController < ApplicationController
   before_action :set_group, only: [:edit, :update, :destroy]
 
   def index
-    @groups = current_user.groups
+    @groups = current_user.groups.includes(:entities)
+
+    if params[:sort] == 'ancient'
+      @groups = @groups.order(created_at: :asc)
+    else # if params[:sort] == 'recent'
+      @groups = @groups.order(created_at: :desc)
+    end
+
+    @group_entity_sums = {}
+    @groups.each do |group|
+      @group_entity_sums[group.id] = group.entities.sum(:amount)
+    end
   end
 
   def new

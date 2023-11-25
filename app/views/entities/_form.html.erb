@@ -1,4 +1,6 @@
-<%= form_for(entity) do |f| %>
+<%= form_with(model: [@group, @entity], url: group_entities_path(@group), method: :post) do |f| %>
+    <!-- Other form fields -->
+    <%= f.hidden_field :group_id, value: @group.id %>
     <div class="form-group">
         <%= f.label :name %>
         <%= f.text_field :name, class: 'form-control', required: true %>
@@ -9,17 +11,7 @@
         <%= f.text_field :amount, class: 'form-control' %>
     </div>
 
-    <div class="form-group">
-        <label>Groups</label><br>
-        <% Group.all.each do |group| %>
-            <div class="form-check">
-                <%= f.check_box :group_ids, { multiple: true }, group.id, nil %>
-                <%= f.label :group_ids, group.name %>
-            </div>
-        <% end %>
+    <div class="form-group pt-2">
+        <%= f.submit 'Save', class: 'btn btn-primary' %>
     </div>
-
-  <div class="form-group pt-2">
-    <%= f.submit 'Save', class: 'btn btn-primary' %>
-  </div>
 <% end %>

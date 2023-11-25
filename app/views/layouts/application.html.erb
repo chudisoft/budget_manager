@@ -39,7 +39,9 @@
                   <% end %>
                 </ul>
               </li>
-              <li class="nav-item dropdown">
+              <%
+=begin%>
+ <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Entity
                 </a>
@@ -49,7 +51,9 @@
                     <li><%= link_to 'New Entity', new_entity_path, class: "dropdown-item" %></li>
                   <% end %>
                 </ul>
-              </li>
+              </li> 
+<%
+=end%>
               <% if current_user.present? %> <!-- Check if the user is present (logged in) -->
                 <li class="nav-item">
                  <li class="nav-item"><%= button_to 'Logout', destroy_user_session_path, method: :delete, class: "nav-link logout--btn" %></li>
