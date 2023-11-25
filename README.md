@@ -174,6 +174,7 @@ follow me for update.
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 I would like to thank microverse for this __wonderful__ opportunity.
+And also to Gregoire Vella on Behance who Original design inspired this idea.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

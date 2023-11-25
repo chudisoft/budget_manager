@@ -38,3 +38,10 @@
 .mw-100:visited {
   color: rgb(161, 161, 161) !important;
 }
+
+.bottom-element {
+  margin-top: auto !important;
+  position: absolute !important;
+  bottom: 5px !important;
+  width: 90%;
+}
