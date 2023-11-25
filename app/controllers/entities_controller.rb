@@ -4,8 +4,8 @@ class EntitiesController < ApplicationController
   before_action :set_entity, only: [:edit, :update, :destroy]
 
   def index
-    pp @group.entities
     @entities = @group.entities
+    render :index
   end
 
   def new
@@ -19,7 +19,6 @@ class EntitiesController < ApplicationController
   def create
     @entity = @group.entities.new(entity_params)
     @entity.author = current_user
-    # @entity.group = @group
 
     if @entity.save
       redirect_to group_entities_path(@group), notice: 'Entity was successfully created.'
@@ -55,7 +54,6 @@ class EntitiesController < ApplicationController
   end
 
   def entity_params
-    # params.require(:entity).permit(:name, :amount)
     params.require(:entity).permit(:name, :amount, :group_id)
   end
 end
