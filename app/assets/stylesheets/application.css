@@ -14,9 +14,9 @@
  *= require_self
  */
 
- body {
+body {
   background-color: #f1f1f1;
- }
+}
 
 .logout--btn {
   background: unset;
