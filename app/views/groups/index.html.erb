@@ -6,13 +6,13 @@
 
   <div class="row gap-2 justify-content-center p-3 pt-0 mt-0 pb-5">
     <% @groups.each do |group| %>
-      <div class="col-md-4 col-lg-3 card p-0">
+      <div class="col-md-12 card p-0">
         <%= link_to group_entities_path(group), class: 'text-decoration-none text-secondary' do %>
           <div class="d-flex">
-            <div class="col-3">
+            <div class="col-3 col-md-1">
               <img src=<%= group.icon %> class='img-tumbnail'>
             </div>
-            <div class="col-6">
+            <div class="col-6 col-md-8">
               <div class="col-12">
                 <%= group.name %>
               </div>

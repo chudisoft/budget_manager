@@ -9,12 +9,12 @@
   </div>
   <div class="row gap-2 justify-content-center p-3 pt-0 mt-0 pb-5">
     <% @entities.each do |entity| %>
-      <div class="col-md-4 col-xl-3 card p-0 text-secondary">
+      <div class="col-md-12 card p-0 text-secondary">
         <div class="d-flex">
-          <div class="col-3">
+          <div class="col-3 col-md-1">
             <img src=<%= @group.icon %> class='img-tumbnail'>
           </div>
-          <div class="col-6">
+          <div class="col-6 col-md-8">
             <div class="col-12">
               <%= entity.name %>
             </div>
