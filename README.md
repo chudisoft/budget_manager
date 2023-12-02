@@ -17,6 +17,8 @@
     - [Setup](#setup)
     - [Usage](#usage)
     - [Run tests](#run-tests)
+    - [Deploy](#deploy)
+    - [Presentation](#presentation)
   - [👥 Authors ](#-authors-)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
@@ -124,6 +126,26 @@ bundle exec rspec
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+
+### Deploy
+
+This project is deployed at:
+```
+https://budget-manager-7v27.onrender.com/
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+### Presentation
+
+This project is presented at:
+```
+https://drive.google.com/file/d/1V8ybN1ztHb2e9PIVLubO7Ry4Y_xjNL7I/view?usp=sharing
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
@@ -173,8 +195,8 @@ follow me for update.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank microverse for this __wonderful__ opportunity.
-And also to Gregoire Vella on Behance who Original design inspired this idea.
+I would like to thank microverse for this __wonderful__ opportunity,
+And also to (<a href="https://www.behance.net/gregoirevella">Gregoire Vella on Behance</a>) whose Original design inspired this idea.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
