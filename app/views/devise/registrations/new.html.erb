@@ -1,12 +1,16 @@
+<div class="mb-4 bg-primary d-flex text-center justify-content-between p-4 text-light">
+  <%= link_to new_user_session_path, class: "pe-4 text-decoration-none text-light" do %>
+    <i class="fas fa-arrow-left fe-2 float-start"></i>
+  <% end %>
+  <span>Register</span>
+  <span class='text-bold'>Next</span>
 
+</div>
 
 <div class="card p-0 col-md-12">
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
 
-    <div class="card-header p-2">
-      <h2>Sign up</h2>
-    </div>
     <div class="card-body p-2">
       <div class="form-group mb-2">
         <input type='text' autofocus placeholder='Full Name' class='form-control'>
@@ -29,5 +33,3 @@
     </div>
   <% end %>
 </div>
-
-<%= render "devise/shared/links" %>

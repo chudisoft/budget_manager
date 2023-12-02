@@ -1,3 +1,11 @@
+<div class="mb-4 bg-primary d-flex text-center justify-content-between p-4 text-light">
+  <%= link_to root_path, class: "pe-4 text-decoration-none text-light" do %>
+    <i class="fas fa-arrow-left fe-2 float-start"></i>
+  <% end %>
+  <span>Login</span>
+  <span class='text-bold'>Next</span>
+
+</div>
 
 <div class="card p-0 col-md-12">
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -21,4 +29,3 @@
     </div>
   <% end %>
 </div>
-<%= render "devise/shared/links" %>
