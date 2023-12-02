@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Entity', type: :model do
   Rails.application.routes.default_url_options[:host] = 'localhost:3000'
 
-  let(:user) { User.new(email: 'user@example.com', password: 'password') }
+  let(:user) { User.new(name: 'admin user', email: 'user@example.com', password: 'password') }
   let(:group) do
     Group.new(name: 'Bread', icon: 'https//a.com', user:)
   end

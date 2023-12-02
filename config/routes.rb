@@ -2,7 +2,8 @@
 
 Rails.application.routes.draw do
   root 'home#index'
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'registrations' }
+
   # resources :groups #, only: [:new, :edit, :create, :destroy]
   # resources :entities #, only: [:new, :edit, :create, :destroy]
   resources :groups do
