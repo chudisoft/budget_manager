@@ -13,6 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+  background-color: #f1f1f1;
+ }
+
 .logout--btn {
   background: unset;
   border: unset;
@@ -24,7 +29,7 @@
 }
 
 .mw-100 {
-  max-width: 220px !important;
+  max-width: max-content !important;
 }
 
 .mw-100:active {
@@ -41,7 +46,44 @@
 
 .bottom-element {
   margin-top: auto !important;
-  position: absolute !important;
+  position: fixed !important;
   bottom: 5px !important;
   width: 90%;
+}
+
+.text-primary {
+  color: #3778c2 !important;
+}
+
+.text-success {
+  color: #5fb523 !important;
+}
+
+.text-dark {
+  color: #434b54 !important;
+}
+
+.bg-primary,
+.btn-primary {
+  background-color: #3778c2 !important;
+}
+
+.bg-success,
+.btn-success {
+  background-color: #5fb523 !important;
+}
+
+.bg-dark,
+.btn-dark {
+  background-color: #434b54 !important;
+}
+
+.app-title {
+  top: 45%;
+  position: absolute;
+  text-align: center;
+  font-size: 3em;
+  font-weight: 500;
+  width: 100vw;
+  left: 0;
 }

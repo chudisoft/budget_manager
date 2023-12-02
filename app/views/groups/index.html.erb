@@ -1,10 +1,10 @@
-<div class="container mt-4">
+<div class="">
   <div class="row mb-4 text-end justify-content-end bg-primary p-2">
     <%= link_to 'Most Recent', groups_path(sort: 'recent'), class: 'text-decoration-none text-light mw-100' %>
     <%= link_to 'Most Ancient', groups_path(sort: 'ancient'), class: 'text-decoration-none text-light mw-100' %>
   </div>
 
-  <div class="row gap-2 justify-content-center">
+  <div class="row gap-2 justify-content-center p-3 pt-0 mt-0 pb-5">
     <% @groups.each do |group| %>
       <div class="col-md-4 col-lg-3 card p-0">
         <%= link_to group_entities_path(group), class: 'text-decoration-none text-secondary' do %>
@@ -25,7 +25,7 @@
               <p class='text-bold text-dark text-end pe-1'><%= number_to_currency(sum, unit: "$") %></p>
             </div>
           </div>
-          <div class="card-footer">
+          <div class="p-1">
             <%= form_with(model: group, url: group_path(group), method: :delete, data: { confirm: 'Are you sure?' }, class: 'd-flex gap-2 justify-content-end') do |form| %>
               <%= link_to edit_group_path(group), class: 'btn btn-sm btn-primary mr-2' do %>
                 <i class="fas fa-edit"></i>
@@ -39,8 +39,8 @@
       </div>
     <% end %>
   </div>
-  
-  <div class="container bottom-element">
-    <%= link_to "Add Group", new_group_path(), class: "btn btn-primary w-100" %>
-  </div>
 </div>
+  
+  <div class="bottom-element w-100">
+    <%= link_to "Add Group", new_group_path(), class: "btn btn-success w-100" %>
+  </div>

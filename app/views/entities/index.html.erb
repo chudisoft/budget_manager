@@ -1,13 +1,13 @@
-<div class="container mt-0 pt-0">
-  <div class="mb-4 bg-secondary d-flex text-center justify-content-between p-4">
+<div class="">
+  <div class="mb-4 bg-primary d-flex text-center justify-content-between p-4 text-light">
     <%= link_to groups_path, class: "pe-4 text-decoration-none text-light" do %>
       <i class="fas fa-arrow-left fe-2 float-start"></i>
     <% end %>
-    <span class='text-light'><%= @group.name %></span>
+    <span><%= @group.name %></span>
     <span class='text-bold'><%= number_to_currency(@group.entities.sum(:amount), unit: "$") %></span>
 
   </div>
-  <div class="row gap-2 justify-content-center">
+  <div class="row gap-2 justify-content-center p-3 pt-0 mt-0 pb-5">
     <% @entities.each do |entity| %>
       <div class="col-md-4 col-xl-3 card p-0 text-secondary">
         <div class="d-flex">
@@ -26,7 +26,7 @@
             <p class='text-bold text-dark text-end pe-1'><%= number_to_currency(entity.amount, unit: "$") %></p>
           </div>
         </div>
-        <div class="card-footer">
+        <div class="p-1">
           <%= form_with(model: entity, url: group_entity_path(entity.group, entity), method: :delete, data: { confirm: 'Are you sure?' }, class: 'd-flex gap-2 justify-content-end') do |form| %>
             <%= link_to edit_group_entity_path(entity.group, entity), class: 'btn btn-sm btn-primary mr-2' do %>
               <i class="fas fa-edit"></i>
@@ -39,7 +39,7 @@
       </div>
     <% end %>
   </div>
-  <div class="container text-center bottom-element">
-    <%= link_to "New Entity", new_group_entity_path(@group), class: "btn btn-primary w-100" %>
-  </div>
 </div>
+  <div class="text-center bottom-element w-100">
+    <%= link_to "New Entity", new_group_entity_path(@group), class: "btn btn-success w-100" %>
+  </div>
