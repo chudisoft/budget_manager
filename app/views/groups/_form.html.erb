@@ -1,0 +1,16 @@
+<%= form_for(group) do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control', required: true %>
+  </div>
+  <div class="form-group">
+    <%= f.label :icon %> (URL) <a href='https://www.freepik.com/icons/link' target='_blank'>Get one<a>
+    <%= f.text_field :icon, class: 'form-control', required: true %>
+  </div>
+
+  <!-- Add other fields as needed -->
+
+  <div class="form-group pt-2">
+    <%= f.submit 'Save', class: 'btn btn-primary' %>
+  </div>
+<% end %>

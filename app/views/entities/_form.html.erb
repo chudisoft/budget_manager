@@ -1,0 +1,17 @@
+<%= form_with(model: [@group, @entity], url: group_entities_path(@group), method: :post) do |f| %>
+    <!-- Other form fields -->
+    <%= f.hidden_field :group_id, value: @group.id %>
+    <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control', required: true %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :amount %>
+        <%= f.text_field :amount, class: 'form-control' %>
+    </div>
+
+    <div class="form-group pt-2">
+        <%= f.submit 'Save', class: 'btn btn-primary' %>
+    </div>
+<% end %>
