@@ -27,8 +27,8 @@
           </div>
         </div>
         <div class="p-1">
-          <%= form_with(model: entity, url: group_entity_path(entity.group, entity), method: :delete, data: { confirm: 'Are you sure?' }, class: 'd-flex gap-2 justify-content-end') do |form| %>
-            <%= link_to edit_group_entity_path(entity.group, entity), class: 'btn btn-sm btn-primary mr-2' do %>
+          <%= form_with(model: entity, url: group_entity_path(@group, entity), method: :delete, data: { confirm: 'Are you sure?' }, class: 'd-flex gap-2 justify-content-end') do |form| %>
+            <%= link_to edit_group_entity_path(@group, entity), class: 'btn btn-sm btn-primary mr-2' do %>
               <i class="fas fa-edit"></i>
             <% end %>
               <%= form.button type: 'submit', class: 'btn btn-danger btn-sm' do %>

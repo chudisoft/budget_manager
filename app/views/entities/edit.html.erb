@@ -6,7 +6,9 @@
           Edit Entity
         </div>
         <div class="card-body">
-          <%= render 'form', entity: @entity %>
+          <%= form_for([@group, @entity]) do |f| %>
+            <%= render 'form', entity: @entity, f: f %>
+          <% end %>
         </div>
       </div>
     </div>
