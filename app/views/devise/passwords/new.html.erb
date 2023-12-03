@@ -7,10 +7,11 @@
 
     <div class="card-body p-2">
       <div class="form-group">
-        <%= f.input :email,
+        <%= f.email_field :email,
                     required: true,
                     autofocus: true,
-                    input_html: { autocomplete: "email", class: 'form-control' } %>
+                    autocomplete: "email",
+                    class: 'form-control' %>
       </div>
     </div>
 
@@ -20,5 +21,7 @@
       </div>
     </div>
   <% end %>
+  <div class="text-center p-2">
+    <%= link_to 'Login Instead?', new_user_session_path, class: "text-gray text-decoration-none" %>
+  </div>
 </div>
-<%= render "devise/shared/links" %>
