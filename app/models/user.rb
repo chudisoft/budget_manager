@@ -7,4 +7,13 @@ class User < ApplicationRecord
 
   has_many :groups
   has_many :entities
+
+  validates :fname, presence: true, length: { minimum: 3, maximum: 50 }
+  validate :fullname
+
+  def fullname
+    return unless fname.present? && fname.split.size != 2
+
+    errors.add(:fname, 'must contain two names separated by a space')
+  end
 end

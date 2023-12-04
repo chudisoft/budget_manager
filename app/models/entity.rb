@@ -1,9 +1,10 @@
 # This Class handles operations related to Entity
 class Entity < ApplicationRecord
-  belongs_to :author, class_name: 'User', foreign_key: 'author_id' # Ensure correct association with the User model
-  # has_and_belongs_to_many :groups
-  belongs_to :group
+  belongs_to :author, class_name: 'User', foreign_key: 'author_id'
+  has_many :entity_groups
+  has_many :groups, through: :entity_groups
 
   validates :name, presence: true
+  validates :groups, presence: true
   validates :amount, presence: true, numericality: { greater_than: 0 }
 end
