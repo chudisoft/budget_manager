@@ -15,13 +15,13 @@
       </div>
     </div>
 
-    <div class="card-footer p-2">
-      <div class="form-group">
-        <%= f.button :submit, "Send me reset password instruction", class: 'btn btn-primary w-100' %>
+    <div>
+      <div class="form-group btn-div">
+        <%= f.button :submit, "Send me reset password instruction", class: 'btn-primary-action' %>
+      </div>
+      <div class="text-center btn-div">
+        <%= link_to 'Login Instead?', new_user_session_path, class: "btn-secondary-action" %>
       </div>
     </div>
   <% end %>
-  <div class="text-center p-2">
-    <%= link_to 'Login Instead?', new_user_session_path, class: "text-gray text-decoration-none" %>
-  </div>
 </div>

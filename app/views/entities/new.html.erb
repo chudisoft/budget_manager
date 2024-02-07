@@ -14,11 +14,9 @@
         <div class="card-header">
           New Entity
         </div>
-        <div class="card-body">
           <%= form_with(model: [@group, @entity], url: group_entities_path(@group), method: :post) do |f| %>
             <%= render 'form', entity: @entity, f: f %>
           <% end %>
-        </div>
       </div>
     </div>
   </div>

@@ -5,11 +5,9 @@
         <div class="card-header">
           Edit Entity
         </div>
-        <div class="card-body">
-          <%= form_for([@group, @entity]) do |f| %>
-            <%= render 'form', entity: @entity, f: f %>
-          <% end %>
-        </div>
+        <%= form_for([@group, @entity]) do |f| %>
+          <%= render 'form', entity: @entity, f: f %>
+        <% end %>
       </div>
     </div>
   </div>

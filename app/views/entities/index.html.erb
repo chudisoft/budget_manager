@@ -7,39 +7,41 @@
     <span class='text-bold'><%= number_to_currency(@group.entities.sum(:amount), unit: "$") %></span>
 
   </div>
-  <div class="row gap-2 justify-content-center p-3 pt-0 mt-0 pb-5">
-    <% @entities.each do |entity| %>
-      <div class="col-md-12 card p-0 text-secondary">
-        <div class="d-flex">
-          <div class="col-3 col-md-1">
-            <img src=<%= @group.icon %> class='img-tumbnail'>
-          </div>
-          <div class="col-6 col-md-8">
-            <div class="col-12">
-              <%= entity.name %>
+  <div class="p-3 pt-0 mt-0 pb-5">
+    <div class="row gap-2 justify-content-center">
+      <% @entities.each do |entity| %>
+        <div class="col-md-12 card p-0 text-secondary">
+          <div class="d-flex">
+            <div class="col-3 col-md-1">
+              <img src=<%= @group.icon %> class='img-tumbnail'>
             </div>
-            <div class="col-12 mt-4">
-              <%= entity.created_at.strftime('%b %d %Y') %>
+            <div class="col-6 col-md-8">
+              <div class="col-12">
+                <%= entity.name %>
+              </div>
+              <div class="col-12 mt-4">
+                <%= entity.created_at.strftime('%b %d %Y') %>
+              </div>
+            </div>
+            <div class="col-3">
+              <p class='text-bold text-dark text-end pe-1'><%= number_to_currency(entity.amount, unit: "$") %></p>
             </div>
           </div>
-          <div class="col-3">
-            <p class='text-bold text-dark text-end pe-1'><%= number_to_currency(entity.amount, unit: "$") %></p>
-          </div>
-        </div>
-        <div class="p-1">
-          <%= form_with(model: entity, url: group_entity_path(@group, entity), method: :delete, data: { confirm: 'Are you sure?' }, class: 'd-flex gap-2 justify-content-end') do |form| %>
-            <%= link_to edit_group_entity_path(@group, entity), class: 'btn btn-sm btn-primary mr-2' do %>
-              <i class="fas fa-edit"></i>
-            <% end %>
-              <%= form.button type: 'submit', class: 'btn btn-danger btn-sm' do %>
-                <i class="fa fa-trash"></i>
+          <div class="p-1">
+            <%= form_with(model: entity, url: group_entity_path(@group, entity), method: :delete, data: { confirm: 'Are you sure?' }, class: 'd-flex gap-2 justify-content-end') do |form| %>
+              <%= link_to edit_group_entity_path(@group, entity), class: 'btn btn-sm btn-primary mr-2' do %>
+                <i class="fas fa-edit"></i>
               <% end %>
-          <% end %>
+                <%= form.button type: 'submit', class: 'btn btn-danger btn-sm' do %>
+                  <i class="fa fa-trash"></i>
+                <% end %>
+            <% end %>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
-  <div class="text-center bottom-element w-100">
-    <%= link_to "New Entity", new_group_entity_path(@group), class: "btn btn-success w-100" %>
+  <div class="bottom-element">
+    <%= link_to "New Entity", new_group_entity_path(@group), class: "btn-success-action" %>
   </div>
