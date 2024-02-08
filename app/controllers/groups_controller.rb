@@ -48,6 +48,7 @@ class GroupsController < ApplicationController
   def destroy
     @group = Group.find(params[:id])
     if current_user == @group.user # Ensure the current user owns the group
+      @group.entities.destroy_all
       @group.destroy
       redirect_to groups_path, notice: 'Group was successfully removed.'
     else

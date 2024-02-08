@@ -13,9 +13,76 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  background-color: #f1f1f1;
+}
+
 .logout--btn {
   background: unset;
   border: unset;
+}
+
+.btn-div {
+  display: grid;
+}
+
+.btn-primary-action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  background-color: #3778c2;
+  border: unset;
+  color: #f1f1f1;
+  margin: 0.2em 0.5em;
+  height: 3.5em;
+  padding: 0 1em;
+  cursor: pointer;
+}
+
+.btn-success-action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  background-color: #5fb523;
+  border: unset;
+  color: #f1f1f1;
+  margin: 0.2em 0.5em;
+  height: 3.5em;
+  padding: 0 1em;
+  cursor: pointer;
+}
+
+.btn-secondary-action {
+  text-align: center;
+  text-decoration: none;
+  color: #979797;
+  border: unset;
+  margin: 0.2em 0.5em;
+  height: 3.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1em;
+  cursor: pointer;
+}
+
+.bottom-element {
+  margin-top: auto !important;
+  position: fixed !important;
+  bottom: 5px !important;
+  display: grid;
+  width: 100%;
+}
+
+.optional {
+  padding-left: 0.2em;
+}
+
+.form-check {
+  padding-left: 0 !important;
 }
 
 .img-tumbnail {
@@ -24,7 +91,7 @@
 }
 
 .mw-100 {
-  max-width: 220px !important;
+  max-width: max-content !important;
 }
 
 .mw-100:active {
@@ -39,9 +106,43 @@
   color: rgb(161, 161, 161) !important;
 }
 
-.bottom-element {
-  margin-top: auto !important;
-  position: absolute !important;
-  bottom: 5px !important;
-  width: 90%;
+.text-primary {
+  color: #3778c2 !important;
+}
+
+.text-success {
+  color: #5fb523 !important;
+}
+
+.text-dark {
+  color: #434b54 !important;
+}
+
+.bg-primary,
+.btn-primary {
+  background-color: #3778c2 !important;
+}
+
+.bg-success,
+.btn-success {
+  background-color: #5fb523 !important;
+}
+
+.bg-dark,
+.btn-dark {
+  background-color: #434b54 !important;
+}
+
+.app-title {
+  top: 45%;
+  position: absolute;
+  text-align: center;
+  font-size: 2.9em;
+  font-weight: 500;
+  width: 100vw;
+  left: 0;
+}
+
+.text-gray {
+  color: #979797;
 }

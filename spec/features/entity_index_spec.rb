@@ -2,10 +2,10 @@ require 'rails_helper'
 
 RSpec.describe 'Entity index', type: :feature do
   Rails.application.routes.default_url_options[:host] = 'localhost:3000'
-  let(:user) { User.new(email: 'user@example.com', password: 'password') }
+  let(:user) { User.new(fname: 'admin user', email: 'user@example.com', password: 'password') }
   let(:group) { Group.new(name: 'Flour', icon: 'https://', user:) }
   let(:entity) do
-    Entity.new(name: 'Bread', amount: 30, group:, author_id: user.id)
+    Entity.new(name: 'Bread', amount: 30, author_id: user.id)
   end
 
   before { user.save }

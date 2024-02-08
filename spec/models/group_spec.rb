@@ -2,11 +2,11 @@ require 'rails_helper'
 
 RSpec.describe 'Group', type: :model do
   Rails.application.routes.default_url_options[:host] = 'localhost:3000'
-  let(:user) { User.new(email: 'user@example.com', password: 'password') }
+  let(:user) { User.new(fname: 'admin user', email: 'user@example.com', password: 'password') }
   let(:group) do
     Group.new(name: 'Bread', icon: 'https//a.com', user:)
   end
-  let(:entity) { Entity.new(name: 'Flour', amount: 20, group:, author_id: user.id) }
+  let(:entity) { Entity.new(name: 'Flour', amount: 20, author_id: user.id) }
   before { user.save }
   before { group.save }
   before { entity.save }

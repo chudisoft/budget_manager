@@ -1,13 +1,20 @@
-<div class="container mt-4">
+<div class="mb-4 bg-primary d-flex text-center justify-content-between p-4 text-light">
+  <%= link_to groups_path, class: "pe-4 text-decoration-none text-light" do %>
+    <i class="fas fa-arrow-left fe-2 float-start"></i>
+  <% end %>
+  <span>Add a Category</span>
+  <span></span>
+
+</div>
+
+<div class="p-2 mt-4">
   <div class="row justify-content-center">
-    <div class="col-md-4 col-xl-3">
+    <div class="col-md-12">
       <div class="card">
         <div class="card-header">
           New Group
         </div>
-        <div class="card-body">
-          <%= render 'form', group: @group %>
-        </div>
+        <%= render 'form', group: @group %>
       </div>
     </div>
   </div>

@@ -1,13 +1,22 @@
-<div class="container mt-4">
+<div class="mb-4 bg-primary d-flex text-center justify-content-between p-4 text-light">
+  <%= link_to group_entities_path(@group), class: "pe-4 text-decoration-none text-light" do %>
+    <i class="fas fa-arrow-left fe-2 float-start"></i>
+  <% end %>
+  <span><%= @group.name %></span>
+  <span class='text-bold'><%= number_to_currency(@group.entities.sum(:amount), unit: "$") %></span>
+
+</div>
+
+<div class="mt-4 p-2">
   <div class="row justify-content-center">
-    <div class="col-md-4 col-xl-3">
+    <div class="col-md-12">
       <div class="card">
         <div class="card-header">
           New Entity
         </div>
-        <div class="card-body">
-          <%= render 'form', entity: @entity %>
-        </div>
+          <%= form_with(model: [@group, @entity], url: group_entities_path(@group), method: :post) do |f| %>
+            <%= render 'form', entity: @entity, f: f %>
+          <% end %>
       </div>
     </div>
   </div>
